@@ -1,0 +1,91 @@
+.keyboard {
+  margin-top: 200px;
+  display: grid;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .keyboard {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+.keyboardRow {
+  display: flex;
+}
+
+.keyboardKey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.2s ease;
+  transform: translateZ(20px);
+  margin: 0 4px;
+}
+
+.keyboardKey:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateZ(10px) translateY(2px);
+}
+
+@media screen and (max-width: 768px) {
+  .keyboardKey {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    transform: translateZ(15px);
+  }
+
+  .keyboardKey:active {
+    transform: translateZ(7.5px) translateY(2px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .keyboardKey {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    transform: translateZ(10px);
+  }
+
+  .keyboardKey:active {
+    transform: translateZ(5px) translateY(2px);
+  }
+}
+
+.spaceKey {
+  width: 540px;
+}
+
+.longKey {
+  width: 130px;
+}
+
+.shiftKey {
+  width: 164px;
+}
