@@ -1,0 +1,41 @@
+.snow-background {
+  /* background-color: #ffffff; */
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+.snow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh; /* 화면의 전체 높이 */
+  width: 100vw;
+  overflow: hidden; /* 화면 밖으로 나가는 눈송이를 숨김 */
+  font-size: 64px;
+}
+
+.snow-flake {
+  position: absolute;
+  top: 0;
+  color: #ffffff;
+  animation: fall 3.5s linear infinite;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+    transform: translateY(100vh); /* 눈송이가 화면 아래로 떨어짐 */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh); /* 눈송이가 사라지도록 설정 */
+  }
+}
