@@ -1,0 +1,23 @@
+@keyframes rotateAxis {
+  from {
+    transform: rotateZ(350deg) perspective(800px) rotateY(0deg);
+  }
+  to {
+    transform: rotateZ(350deg) perspective(800px) rotateY(360deg);
+  }
+}
+
+.satellites {
+  animation: rotateAxis 50s linear infinite;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 300px;
+}
+
+.satellite {
+  position: absolute;
+  width: 100px;
+  transform: rotateY(calc(var(--i) * 1deg)) translateZ(30vw);
+}
