@@ -1,0 +1,58 @@
+.box {
+  margin: 300px auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: rotate 10s infinite linear;
+  background-color: black;
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, transparent, #0002);
+}
+
+.face1 {
+  --i: 0;
+}
+.face2 {
+  --i: 1;
+}
+.face3 {
+  --i: 2;
+}
+.face4 {
+  --i: 3;
+}
+.face5 {
+  --i: 4;
+}
+.face6 {
+  --i: 5;
+}
+.face7 {
+  --i: 6;
+}
+.face8 {
+  --i: 7;
+}
+
+@keyframes rotate {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
