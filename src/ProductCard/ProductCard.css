@@ -1,0 +1,49 @@
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.product-card {
+  background: linear-gradient(135deg, #54e8ff, #008fff);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  margin-top: 150px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s, filter 0.3s;
+  width: 180px; /* 카드의 고정된 너비 */
+  height: 250px; /* 카드의 고정된 높이 */
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px; /* 이미지의 고정된 높이 */
+  background-size: contain; /* 이미지가 박스 안에 들어가도록 조정 */
+  background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+  background-position: center;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.product-cards:hover .product-card {
+  filter: brightness(0.7);
+}
+
+.product-cards:hover .product-card:hover {
+  filter: brightness(1);
+}
