@@ -1,0 +1,81 @@
+/* src/JustifyContents.css */
+.JustifyContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.JustifyContentscontainer {
+  display: flex;
+  margin: 10px;
+}
+
+.JustifyContentsText {
+  width: 200px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  padding-top: 5px;
+  margin-right: 15px;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  background-color: #a7f8ff;
+  padding: 10px 0;
+  border-radius: 5px;
+  width: 300px;
+  transition: justify-content 2s ease-in-out;
+  position: relative;
+}
+
+.item {
+  font-size: 2rem;
+  margin: 5px;
+  transition: transform 1s ease-in-out;
+}
+
+.start .item {
+  transform: translateX(-150%);
+}
+
+.center .item {
+  transform: translateX(0%);
+}
+
+.end .item {
+  transform: translateX(150%);
+}
+
+.space-between .item:nth-child(1) {
+  transform: translateX(-150%);
+}
+
+.space-between .item:nth-child(3) {
+  transform: translateX(150%);
+}
+
+.space-around .item:nth-child(1) {
+  transform: translateX(-100%);
+}
+
+.space-around .item:nth-child(3) {
+  transform: translateX(100%);
+}
+
+.space-evenly .item:nth-child(1) {
+  transform: translateX(-75%);
+}
+
+.space-evenly .item:nth-child(3) {
+  transform: translateX(75%);
+}
+
+.JustifyContentsEqual {
+  top: 50%; /* 수직 가운데 정렬 */
+  transform: translateY(100%); /* 수직 가운데 정렬 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
