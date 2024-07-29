@@ -1,0 +1,15 @@
+.board {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  background-color: #bbada0;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.board-row {
+  display: flex;
+}
