@@ -1,0 +1,15 @@
+.timer {
+  display: flex;
+  margin-top: 400px;
+  justify-content: center;
+  gap: 3px;
+}
+.time-section {
+  display: flex;
+}
+
+.timer span {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0 10px;
+}

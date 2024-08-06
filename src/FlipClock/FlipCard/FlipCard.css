@@ -1,0 +1,171 @@
+.flip-card-ul {
+  position: relative;
+  width: 60px;
+  height: 120px;
+  margin: 2px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  font-size: 80px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.flip-card-li {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-li div {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+  background-color: black;
+}
+
+.flip-card-li div::before {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+
+.flip-card-li .num {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 200%;
+  /* align-items: center; */
+  justify-content: center;
+  background-color: var(--blue-grey-800);
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+}
+
+.flip-card-li .upper {
+  top: 0;
+  transform-origin: 50% 100%;
+}
+
+.flip-card-li .upper .num {
+  top: 0;
+}
+
+.flip-card-li .upper::after {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.flip-card-li .lower {
+  bottom: 0;
+  transform-origin: 50% 0%;
+}
+
+.flip-card-li .lower .num {
+  bottom: 0;
+}
+
+.flip-card-li.back {
+  z-index: 3;
+}
+
+.flip-card-li.back .upper {
+  z-index: 2;
+  animation: top-to-middle 0.5s linear both;
+}
+
+.flip-card-li.back .upper::before {
+  animation: show 0.5s linear both;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.flip-card-li.back .lower::before {
+  animation: show 0.5s linear both;
+}
+
+.flip-card-li.front {
+  z-index: 2;
+  animation: increase-zindex 0.5s 0.5s linear forwards;
+}
+
+.flip-card-li.front .upper::before {
+  animation: hide 0.5s 0.3s linear both;
+}
+
+.flip-card-li.front .lower {
+  z-index: 2;
+  animation: middle-to-bottom 0.5s 0.5s linear both;
+}
+
+.flip-card-li.front .lower::before {
+  animation: hide 0.5s 0.3s linear both;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+@keyframes increase-zindex {
+  0% {
+    z-index: 4;
+  }
+  100% {
+    z-index: 4;
+  }
+}
+
+@keyframes middle-to-bottom {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes top-to-middle {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
