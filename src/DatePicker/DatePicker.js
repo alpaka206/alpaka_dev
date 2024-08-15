@@ -1,36 +1,10 @@
 import React, { useEffect } from "react";
 import "./DatePicker.css";
-import { IosSelector, easing } from "./IosSelector";
+import { IosSelector, easing } from "./components/IosSelector";
+import { getYears, getMonths, getDays } from "./components/dateUtils"; // 수정된 부분
 
 const DatePicker = () => {
   useEffect(() => {
-    // date logic
-    const getYears = () => {
-      let currentYear = new Date().getFullYear();
-      let years = [];
-      for (let i = currentYear - 20; i < currentYear + 20; i++) {
-        years.push({ value: i, text: i });
-      }
-      return years;
-    };
-
-    const getMonths = (year) => {
-      let months = [];
-      for (let i = 1; i <= 12; i++) {
-        months.push({ value: i, text: i });
-      }
-      return months;
-    };
-
-    const getDays = (year, month) => {
-      let dayCount = new Date(year, month, 0).getDate();
-      let days = [];
-      for (let i = 1; i <= dayCount; i++) {
-        days.push({ value: i, text: i });
-      }
-      return days;
-    };
-
     let currentYear = new Date().getFullYear();
     let currentMonth = 1;
     let currentDay = 1;
@@ -93,13 +67,6 @@ const DatePicker = () => {
         <div className="month" id="month1"></div>
         <div className="day" id="day1"></div>
       </div>
-      {/* 선택된 날짜 표시 (원하는 경우 활성화 가능) */}
-      {/* 
-      <p>
-        선택된 날짜: {selectedYear}-{selectedMonth.toString().padStart(2, "0")}-
-        {selectedDay.toString().padStart(2, "0")}
-      </p> 
-      */}
     </div>
   );
 };
